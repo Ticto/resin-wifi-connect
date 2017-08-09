@@ -113,11 +113,14 @@ systemd.exists('NetworkManager.service')
 	if clear
 		console.log('Clearing credentials')
 		manager.clearCredentials()
+	else if config.selectedSSID !== ''
+		console.log('Using Credentials Set In Environment')
+		manager.setCredentials(config.selectedSSID, config.selectedPassphrase)
 .then ->
 	manager.isSetup()
 	.then (setup) ->
 		if setup
-			retry = false
+			retry = !!(config.allowRetry)
 .then ->
 	manager.ready()
 .then(run)

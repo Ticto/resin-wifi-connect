@@ -7,3 +7,6 @@ module.exports =
 	connmanConfig: process.env.PORTAL_CONNMAN_CONFIG or '/host/var/lib/connman/network.config'
 	persistentConfig: process.env.PORTAL_PERSISTENT_CONFIG or '/data/network.config'
 	connectTimeout: process.env.CONNECT_TIMEOUT or 15000
+	selectedSSID: process.env.SET_WIFI_SSID or ''
+	selectedPassphrase: process.env.SET_WIFI_PASSPHRASE or ''
+	allowRetry: process.env.CONNECT_RETRY or false
