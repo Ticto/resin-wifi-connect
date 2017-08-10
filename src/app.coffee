@@ -113,7 +113,7 @@ systemd.exists('NetworkManager.service')
 	if clear
 		console.log('Clearing credentials')
 		manager.clearCredentials()
-	else if (String(config.selectedSSID) is String(''))
+	else if (!(String(config.selectedSSID) is String('')))
 		console.log('Using Credentials Set In Environment')
 		manager.setCredentials(config.selectedSSID, config.selectedPassphrase)
 .then ->
